@@ -118,9 +118,9 @@
 .self-center {
   align-self: center;
 }
-.img-fluid {
-  /* height: 200px !important; */
-}
+/* .img-fluid {
+  height: 200px !important;
+} */
 .fit-cover {
   object-fit: cover;
 }
