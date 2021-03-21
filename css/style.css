@@ -63,7 +63,7 @@
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 170%;
   color: #000000;
@@ -332,6 +332,7 @@ label {
 }
 .panel-body p {
   color: #323232;
+  font-size: 18px;
 }
 .content-flex-end {
   place-content: flex-end;
@@ -498,4 +499,7 @@ label {
   position: absolute;
   right: 0;
   cursor: pointer;
+}
+.why-p {
+  font-size: 18px;
 }
