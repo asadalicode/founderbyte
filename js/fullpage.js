@@ -1,16 +1,4 @@
-// new fullpage('#fullpage', {
-//     licenseKey: 'YOUR KEY HERE',
-//     sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
-//   });
-// new fullpage('#fullpage', {
-//   navigation: true,
-//   responsiveWidth: 700,
-//   anchors: ['home', 'about-us', 'contact'],
-//   parallax: true,
-//   onLeave: function(origin, destination, direction){
-//     console.log("Leaving section" + origin.index);
-// },
-// });
+
 
 var myFullpage = new fullpage("#fullpage", {
   licenseKey: "B1D9FFF2-3CAB42B2-BC6DF7B0-59C13A34",
@@ -125,4 +113,77 @@ document.onreadystatechange = function () {
   }
 
   
+
+  
 };
+
+
+
+
+(() => {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      else if(form.checkValidity()) {
+       
+        var full_name = $("#form_full_name").val();
+        var company_name = $("#form_companyname").val();
+        var email = $("#form_email").val();
+        var phone = $("#form_phone").val();
+        var message = $("#form_message").val();
+
+        var fd = new FormData(); 
+        fd.append( 'full_name', full_name );
+        fd.append( 'company_name', company_name );
+        fd.append( 'email', email );
+        fd.append( 'phone', phone );
+        fd.append( 'message', message );
+        $.ajax({
+          url: 'http://api.founderbyte.com:8000/mail',
+          data: fd,
+          processData: false,
+          contentType: false,
+          dataType : 'json',
+          type: 'POST',
+          success: function(data){
+            
+         var messageAlert = "alert-primary";
+         var messageText =
+           "Your message was sent, thank you. We will get back to you soon.";
+   
+         var alertBox =
+           '<div class="alert ' +
+           messageAlert +
+           ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+           messageText +
+           "</div>";
+   
+         if (messageAlert && messageText) {
+           $("#messagebox").find(".messages").html(alertBox);
+           form.classList.remove("was-validated");
+           $('form :input').val('');
+           
+          setTimeout(()=> {
+            $("#toast").slideUp(2000);
+          },2500)
+         
+         }
+          }
+        });
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    
+   
+    }, false);
+  });
+})();

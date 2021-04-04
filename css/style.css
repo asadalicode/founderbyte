@@ -1,29 +1,94 @@
 /* import fonts from fonts.css */
 @import url(./fonts.css);
+@import url(../fonts/avenir/stylesheet.css);
 .head-1 {
-  font-family: Avenir;
+  font-family: "Metropolis";
+  font-weight: 700;
   font-style: normal;
-  font-weight: 800;
-  font-size: 90px;
+  font-display: swap;
+  font-size: 90px !important;
 }
 .sec-head-3 {
-  font-family: Avenir;
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: 700;
 }
 .sec-head-5 {
-  font-family: Avenir;
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.sec-head-service {
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 40px;
 }
 .sec-para-5 {
-  font-family: Avenir;
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 35px;
 }
+
+.midi-desc-font {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.lets-work {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 170%;
+  color: #323232;
+  font-size: 18px !important;
+}
+.help {
+  font-family: "Metropolis";
+}
+.contact-us {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.footer-contact {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px !important;
+  line-height: 170%;
+}
+
+.footer-address {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px !important;
+}
+
+.footer-copyright {
+  font-family: "Metropolis Extra";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff !important;
+  text-align: end;
+}
+
+.midi-desc-font-roboto {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px !important;
+}
+
 @media (min-width: 1281px) {
   .head-1 {
     font-size: 50px;
@@ -32,7 +97,7 @@
     font-size: 40px;
   }
   .sec-head-5 {
-    font-size: 40px;
+    font-size: 50px;
   }
 }
 .img-align {
@@ -52,29 +117,28 @@
   width: 500px;
 }
 .head-2 {
-  font-family: Avenir;
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: normal;
-  font-size: 28px;
+  font-size: 28px !important;
   line-height: 170%;
   color: #323232;
 }
 .head-3 {
-  font-family: Avenir;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
-  font-weight: 600;
   line-height: 170%;
   color: #000000;
 }
 .head-6 {
-  font-family: Avenir;
+  font-family: "Metropolis";
   font-style: normal;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 26px;
+  font-weight: normal;
   line-height: 170%;
-  color: #000000;
+  color: #00133e;
 }
 .head-img {
   width: 100px;
@@ -93,8 +157,24 @@
 }
 .navbar-nav a {
   color: black;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 20px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #00133e !important;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Metropolis";
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white !important;
+}
+.navbar-light .navbar-nav .nav-link:active {
+  color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: white !important;
 }
 .navbar {
   z-index: 1000;
@@ -113,6 +193,16 @@
 }
 .home-height {
   height: calc(100vh - 150px);
+  align-items: center;
+}
+
+.why-height {
+  height: calc(100vh - 200px);
+  place-content: space-evenly;
+}
+
+.contact-height-center {
+  height: calc(100vh - 300px);
   align-items: center;
 }
 .self-center {
@@ -348,14 +438,17 @@ label {
   background-color: white;
 }
 
-.h-500 {
+/* .h-500 {
+  height: 500px;
   max-height: 500px;
-}
-@media (min-width: 1501px) {
+} */
+/* @media (min-width: 1501px) {
   .h-500 {
+    height: 700px;
     max-height: max-content;
   }
-}
+} */
+
 .border-50 {
   border-radius: 50%;
 }
@@ -484,6 +577,8 @@ label {
 
 [data-toggle="collapse"]:not(.collapsed) {
   border-bottom: 2px solid #0bd1ff;
+  font-family: "Metropolis";
+  font-weight: bold;
 }
 
 /* carosal style */
@@ -491,6 +586,7 @@ label {
 .carousel-item {
   width: 88% !important;
   margin-right: -88% !important;
+  transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
 }
 
 .carousel-item + .right-controler {
@@ -503,4 +599,94 @@ label {
 }
 .why-p {
   font-size: 18px;
+  font-family: "Metropolis";
+  font-style: normal;
+}
+
+.font-roboto-400 {
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.invalid-feedback {
+  margin-top: 0.1rem;
+}
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  margin-bottom: 0rem !important;
+  border-color: #bdbdbd;
+}
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  margin-bottom: 0rem !important;
+}
+.form-outline .form-control.is-valid ~ .form-label,
+.was-validated .form-outline .form-control:valid ~ .form-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.form-outline .form-control.is-valid ~ .form-notch .form-notch-leading,
+.form-outline .form-control.is-valid ~ .form-notch .form-notch-middle,
+.form-outline .form-control.is-valid ~ .form-notch .form-notch-trailing,
+.form-select.is-valid,
+.was-validated
+  .form-outline
+  .form-control:valid
+  ~ .form-notch
+  .form-notch-leading,
+.was-validated
+  .form-outline
+  .form-control:valid
+  ~ .form-notch
+  .form-notch-middle,
+.was-validated
+  .form-outline
+  .form-control:valid
+  ~ .form-notch
+  .form-notch-trailing,
+.was-validated .form-select:valid {
+  border-color: #bdbdbd !important;
+}
+
+.message {
+  display: flex;
+  position: inherit;
+  place-content: center;
+}
+
+.footer_section {
+  position: absolute;
+  bottom: 0;
+}
+.fix-nav {
+  position: fixed;
+}
+.mb_5vh {
+  margin-bottom: 5vh;
+}
+
+.pos_relative {
+  position: relative;
+}
+
+.h_120 {
+  height: 120px;
+}
+.h_100 {
+  height: 100px;
+}
+
+.font_13 {
+  font-size: 13px !important;
+}
+.text_none {
+  text-transform: none !important;
+}
+
+.m_left_13 {
+  margin-left: -13px;
+}
+
+.pb_1_5 {
+  padding-bottom: 1.5px;
 }
